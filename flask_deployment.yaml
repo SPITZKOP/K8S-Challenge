@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: flask
-        image: ilhemb/flask:v15
+        image: ilhemb/flask:v16
         env:
           - name: PYTHONUNBUFFERED
             value: '1'
