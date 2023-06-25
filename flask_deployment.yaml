@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: flask
-        image: ilhemb/flask:v14
+        image: ilhemb/flask:v15
         env:
           - name: PYTHONUNBUFFERED
             value: '1'
@@ -119,5 +119,5 @@ spec:
       port: 5432
       targetPort: 5432
   type: ClusterIP
-  clusterIP: 10.43.92.150
+  clusterIP: 10.100.241.150
   
