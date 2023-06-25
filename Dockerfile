@@ -6,7 +6,7 @@ WORKDIR .
 
 # Copy the requirements file and install dependencies
 COPY requirements.txt .
-RUN pip install psycopg2
+RUN pip install -r requirements.txt
 
 # Install the postgre client
 RUN apt-get update && apt-get install -y postgresql-client
