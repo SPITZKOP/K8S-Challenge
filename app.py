@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # PostgreSQL database connection
 connect_to_db = psycopg2.connect(
-    host="10.43.92.150",
+    host="10.100.241.150",
     port="5432",
     database="todolist_db",
     user="150",
