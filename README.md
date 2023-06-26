@@ -46,12 +46,12 @@ The todos are persisted in the `postgres-main` database and replicated to `postg
 * To connect to the database locally:
   - docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
  
-## Deployment and GitOps with Argo-CD
+## Continuous Delivery with Argo CD
 * Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes. It provides a powerful and intuitive user interface (UI) and a command-line interface (CLI) for managing the lifecycle of applications running in Kubernetes clusters.
 
 * With Argo CD, you can define the desired state of your applications in a Git repository using Kubernetes manifests (YAML files). Argo CD continuously monitors the Git repository for changes and ensures that the deployed applications match the desired state defined in the repository.
 
-* I used Argo-Cd to control the cluster k8S and deployments, scalability, state of pods...
+* I used Argo-Cd to control the cluster k8S and deployments, Continuous Delivery, scalability, state of pods...
 
 * Installation Argo-CD
   - kubectl create namespace argocd
