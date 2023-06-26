@@ -12,7 +12,7 @@ node {// Jenkins will be able to select all available agents
     
  stage('Push image') 
     {//we pass the built image to our docker hub account
-        withDockerRegistry([ credentialsId: "dockerhubaccount", url: "" ]) 
+        withDockerRegistry([ credentialsId: "dockerpasswd", url: "" ]) 
         {
         dockerImage.push()
         }
