@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: flask-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: flask
@@ -14,12 +14,16 @@ spec:
     spec:
       containers:
       - name: flask
-        image: ilhemb/flask:v18
+        image: ilhemb/flask:v20
         env:
           - name: PYTHONUNBUFFERED
             value: '1'
           - name: PYTHONIOENCODING
             value: 'UTF-8'
+        resources:
+          requests:
+            cpu: 100m
+            memory: 200Mi
         ports:
         - containerPort: 5000
 ---
@@ -28,14 +32,15 @@ kind: Service
 metadata:
   name: flask-service
 spec:
-  type: NodePort
+  #type: NodePort
+  type: LoadBalancer
   selector:
     app: flask
   ports:
     - protocol: TCP
       port: 80
       targetPort: 5000
-      nodePort: 30000
+      #nodePort: 30000
 ---
 apiVersion: apps/v1
 kind: Deployment
