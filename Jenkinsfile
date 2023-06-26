@@ -2,7 +2,7 @@ agent any // Jenkins will be able to select all available agents
 stages {  
     stage('Clone repository') 
     { // git clone repo of image stage
-        git credentialsId: '', url: 'https://github.com/SPITZKOP/K8S-Challenge'
+        git url: 'https://github.com/SPITZKOP/K8S-Challenge'
     }
     
     stage('Build image') 
