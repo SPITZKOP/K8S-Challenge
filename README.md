@@ -44,7 +44,7 @@ The todos are persisted in the `postgres-main` database and replicated to `postg
   - curl  http://127.0.0.1:5000
   
 * To connect to the database locally:
-   docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+  - docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
  
 ## Deployment and GitOps with Argo-CD
 * Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes. It provides a powerful and intuitive user interface (UI) and a command-line interface (CLI) for managing the lifecycle of applications running in Kubernetes clusters.
@@ -54,12 +54,12 @@ The todos are persisted in the `postgres-main` database and replicated to `postg
 * I used Argo-Cd to control the cluster k8S and deployments, scalability, state of pods...
 
 * Installation Argo-CD
-  kubectl create namespace argocd
-  kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.0.4/manifests/install.yaml
+  - kubectl create namespace argocd
+  - kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.0.4/manifests/install.yaml
 
 * Installation Argo-CD CLI
-  sudo curl --silent --location -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/download/v2.0.4/argocd-linux-amd64
-  sudo chmod +x /usr/local/bin/argocd
+  - sudo curl --silent --location -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/download/v2.0.4/argocd-linux-amd64
+  - sudo chmod +x /usr/local/bin/argocd
 
 * Configuration Argo-CD
   - kubectl patch svc argocd-server -n argocd -p '{"spec": {"type":"LoadBalancer"}}'
